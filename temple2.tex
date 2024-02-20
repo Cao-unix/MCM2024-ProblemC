@@ -1,0 +1,292 @@
+%----------------------------------------------------------------------------------
+%% MCM/ICM LaTeX Template %%
+%% 2024 MCM/ICM           %%
+%----------------------------------------------------------------------------------
+%不超过25面（包括任何内容）
+%字体不小于12号
+%摘要十分重要！！！
+%如果使用AI工具，就需要在AI使用报告中说明，不计入25面中
+
+\documentclass[12pt]{article}
+\usepackage{fontspec} % 字体设置
+\usepackage{geometry} % 页面设置
+\usepackage{setspace} % 行间距
+\usepackage{amsmath,amssymb,amsthm} % 公式
+\usepackage{unicode-math} % 公式（一些特殊符号）
+\usepackage{tabularx} % 表格
+\usepackage{booktabs} % 表格线
+\usepackage{graphicx} % 图片
+\usepackage{float}  % 图片位置控制（htpd，H）
+\usepackage{caption} % 图片标题
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{listings} % 代码
+\usepackage{xcolor} % 代码颜色高亮
+\usepackage{url} % 引用链接
+\usepackage{appendix} % 附录
+\usepackage{hyperref} % 超链接
+
+\newcommand{\Problem}{ABCDEF} % 哪一题，在这里修改
+\newcommand{\Team}{1111111} % 队伍编号，在这里修改
+
+
+\setmainfont{Arial}  % 将主字体设置为 Arial
+\geometry{a4paper,scale=0.8,headheight=15pt} % 页面设置，A4纸，缩放0.8
+\setstretch{1.5} % 行间距1.5倍
+\setmathfont{Latin Modern Math} % 公式字体
+\captionsetup[table]{belowskip=10pt} % 表格标题与表格距离
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+} % 超链接颜色
+
+\pagestyle{fancy} % 页眉页脚
+\lhead{Team \# \Team}
+\rhead{Page \thepage\ of 25} % 注意修改总页数
+\cfoot{\empty}
+\renewcommand{\headrulewidth}{0.4pt} % 页眉线宽度
+
+% 定义代码高亮部分的颜色（随便调的，可改）
+\definecolor{codepink}{RGB}{255, 183, 255}
+\definecolor{codePink}{RGB}{255, 60, 255}
+\definecolor{codepurple}{RGB}{204, 0, 204}
+\definecolor{codeYellow}{RGB}{255, 255, 179}
+\definecolor{codeyellow}{RGB}{248, 242, 25}
+\definecolor{codeGreen}{RGB}{60, 200, 160}
+\definecolor{codegreen}{RGB}{142, 255, 29}
+\definecolor{codeBlue}{RGB}{0, 151, 254}
+\definecolor{codeblue}{RGB}{133, 235, 255}
+\definecolor{codegray}{RGB}{234, 234, 234}
+\definecolor{codered}{RGB}{255, 102, 153}
+\definecolor{backcolour}{RGB}{242, 242, 235}
+
+% 代码高亮部分的样式设置
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},      % 代码块背景色  
+    basicstyle=\small,                  % 代码块字体大小(\tiny\scriptsize\footnotesize\small\normalsize\large\Large\LARGE\huge\Huge)
+    frame=single,                       % 代码之外显示边框 (none/leftline/topline/bottomline/lines/single/shadowbox)
+    framesep=0pt,                       % 设置上下边框与代码块内容的距离
+    xleftmargin=0pt,                    % 代码块左侧空白
+    xrightmargin=0pt,                   % 代码块右侧空白
+    breakindent=75pt,                   % 设置换行后的行的缩进
+    rulecolor=\color{black},            % 指定边框的颜色
+    commentstyle=\color{codeGreen},     % 注释风格颜色
+    keywordstyle=\color{codePink},      % 关键字风格颜色 可以规定关键字为keywords={if, end...}
+    stringstyle=\color{codeBlue},       % 字符串风格颜色
+    numberstyle=\color{codered},        % 行号风格颜色
+    numbers=left,                       % 行号位置为左侧(left\right\none)
+    numbersep=5pt,                      % 行号与代码块距离 
+    breakatwhitespace=false,            % 是否在空格处换行
+    breaklines=true,                    % 是否自动换行
+    % prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},  % 换行符号
+    keepspaces=true,                    % 是否保留空格
+    showspaces=false,                   % 是否强调空格
+    showstringspaces=false,             % 是否强调代码中的字符串
+    showtabs=false,                     % 是否强调制表符
+    tabsize=2,                          % 设置制表符长度为2个字符
+    % escapeinside={*},                 % 特定的字符，退出源码模式到LaTeX模式 (例如 escapeinside={\%*}{*)})
+    captionpos=b,                       % 设置标题位置为底部(t\b)
+}
+\lstset{style=mystyle}
+
+\begin{document}
+
+\thispagestyle{empty} % 首页无页眉页脚
+\vspace*{-12ex}
+\centerline{\begin{tabular}{*3{c}}
+	\parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large {\Problem}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2024\\ MCM/ICM\\ Summary Sheet}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Team Control Number}\\ \Large {\Team}\end{center}}	\\
+	\hline
+\end{tabular}}
+
+\vspace*{5ex}
+{\centering \Large \textbf{Our Paper's Title} \par}
+
+%Summary Sheet
+%----------------------------------------------------------------------------------
+{\centering \Large \textbf{Summary} \par}
+The abstract is very important, especially the first sentence, and its length should slightly exceed half a page.
+\begin{itemize}
+    \item Problem repetition and clarification
+    \item Assumptions and their rationality
+    \item Model design and analysis
+    \item Model testing and sensitivity analysis
+    \item Strengths and weaknesses of the model
+\end{itemize}
+
+\noindent \textbf{Keywords:} A, B, C
+%----------------------------------------------------------------------------------
+
+
+% contents 记得更新页面或者用section指令
+%----------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+\newpage
+%----------------------------------------------------------------------------------
+
+
+% Introduction 下面列举了四个小部分，可包含两到三个
+%----------------------------------------------------------------------------------
+\section{\textbf{Introduction}}
+\subsection{\textbf{Problem Background}}
+
+\subsection{\textbf{Problem Restatement}}
+
+\subsection{\textbf{Literature Review}}
+
+\subsection{\textbf{Our Work}}
+%----------------------------------------------------------------------------------
+
+
+% Assumptions and Justifications 假设和对应的证明都要写
+%----------------------------------------------------------------------------------
+\section{\textbf{Assumptions and Justifications}}
+
+Assumptions are acknowledged when they are made throughout the paper, but a list of key assumptions is also provided here.
+
+\begin{enumerate}
+    \item \textbf{Assumption A} 
+    \item \textbf{Assumption B}  
+    \item \textbf{Assumption C}   
+    \item \textbf{Assumption D}
+\end{enumerate}
+%----------------------------------------------------------------------------------
+
+
+% Notations 一些文章中用到的符号，可以在这里定义
+%----------------------------------------------------------------------------------
+\section{Notations}
+\begin{table}[h!] % List your notations here
+    \caption{Notations used in this paper}
+    \begin{tabularx}{\textwidth}{cc}
+    \toprule
+    \textbf{Symbols} & \textbf{Description}\\
+    \midrule
+      $v_{\perp}$ & Component of asteroid's velocity in direction perpendicular to the Earth \\
+      $\rho$ & something \\
+      $c$ & something \\
+    \bottomrule
+    \label{Notation Table}
+    \end{tabularx}
+\end{table}
+    
+Here the main notations are defined while their specific values will be discussed and given later.
+%----------------------------------------------------------------------------------
+
+
+% Model Design and Analysis 模型的建立和分析
+%----------------------------------------------------------------------------------
+\section{\textbf{The name of model 1}}
+\subsection{\textbf{Data Description}}
+
+\subsection{\textbf{The Establishment of Model 1}}
+
+\subsection{\textbf{The Solution of Model 1}}
+
+\section{\textbf{The name of model 2}}
+
+\section{\textbf{The name of model 3}}
+%----------------------------------------------------------------------------------
+
+
+% Sensitivity Analysis 灵敏度分析，改变一个变量，观察结果的变化
+%----------------------------------------------------------------------------------
+\section{\textbf{Sensitivity Analysis}}
+%----------------------------------------------------------------------------------
+
+
+% Model Evaluation and Further Discussion 模型的评价和进一步讨论，优缺点一定要写
+%----------------------------------------------------------------------------------
+\section{\textbf{Model Evaluation and Further Discussion}}
+\subsection{\textbf{Strengths}}
+\begin{enumerate}
+    \item Strength 1
+    \item Strength 2
+\end{enumerate}
+
+\subsection{\textbf{Weaknesses}}
+\begin{enumerate}
+    \item Weakness 1
+    \item Weakness 2
+\end{enumerate}
+
+\subsection{\textbf{Further Discussion}}
+%----------------------------------------------------------------------------------
+
+
+% Conclusion 总结
+%----------------------------------------------------------------------------------
+\section{Conclusion}
+%----------------------------------------------------------------------------------
+
+
+% References 参考文献
+%----------------------------------------------------------------------------------
+\addcontentsline{toc}{section}{References} 
+\begin{thebibliography}{99} % List your references here
+    \bibitem{ref1} T.J. Ahrens and A.W. Harris. Deflection and fragmentation of near-earth asteroids. \textit{Nature}, 360(6403):429-433, 1992.
+    \bibitem{ref2} Josh Handal, Justyna Surowiec, Michael Buckley (2022) \textit{NASA's DART Mission Hits Asteroid in First-Ever Planetary Defense Test}, NASA. 
+    \bibitem{ref3} \url{https://en.wikipedia.org/wiki/Atmosphere_of_Earth}
+  \end{thebibliography}
+%----------------------------------------------------------------------------------
+
+
+% Appendices 附录
+%----------------------------------------------------------------------------------
+% List the programming source files of your model and remember to name each file properly.
+\newpage
+\begin{appendices}
+    \section*{\textbf{Appendices}}
+
+    % 图片
+    %\begin{figure}[h!]
+    %    \centering
+    %    \includegraphics[width=0.95\textwidth]{1.png}
+    %    \caption{名称}
+    %\end{figure}
+
+    % 一般表格
+    \subsection*{Appendix 1}
+
+    Short Description about the Table.
+
+    \begin{table}[h!]
+        \caption{example}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        A & B & $Y1=A'B'$ & $Y2=AB'$ & $Y3=A'B$ & $Y4=AB$ \\ \hline
+        0 & 0 & 1  & 0  & 0  & 0  \\ \hline
+        0 & 1 & 0  & 0  & 1  & 0  \\ \hline
+        1 & 0 & 0  & 1  & 0  & 0  \\ \hline
+        1 & 1 & 0  & 0  & 0  & 1  \\ \hline
+        \end{tabular}
+    \end{table}
+
+    % 代码
+    \subsection*{Appendix 2}
+
+    Short Description about the Codes.
+
+    %\begin{lstlisting}[language=Matlab, firstline=2, lastline=12]{helloworld.m} 直接从已知文件中提取代码
+    \begin{lstlisting}[language=Matlab, caption=matlab example]
+        % This is a sample for Matlab
+        [x,y,z] = meshgrid(linspace(-1.3,1.3));
+        val=(x.^2+(9/4)*y.^2+z.^2-1).^3-x.^2.*z.^3-(9/80)*y.^2.*z.^3;
+        isosurface(x,y,z,val,0)
+    \end{lstlisting}
+
+    \begin{lstlisting}[language=Python, caption=Python example]
+        # This is a sample for Python
+        import numpy as np
+        import math
+        val=50*np.exp(-5)
+    \end{lstlisting}
+     
+\end{appendices}
+%----------------------------------------------------------------------------------
+
+\end{document}
